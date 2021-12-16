@@ -2,7 +2,7 @@
   "name": "aframe",
   "version": "1.2.0",
   "description": "A web framework for building virtual reality experiences.",
-  "homepage": "https://solarity.xyz",
+  "homepage": "https://aframe.io/",
   "main": "dist/aframe-master.js",
   "scripts": {
     "browserify": "browserify src/index.js -s 'AFRAME' -p browserify-derequire",
@@ -22,8 +22,14 @@
     "prerelease": "node scripts/release.js 1.1.0 1.2.0",
     "start": "npm run dev",
     "start:https": "cross-env SSL=true npm run dev",
+    "test": "karma start ./tests/karma.conf.js",
+    "test:docs": "node scripts/docsLint.js",
+    "test:firefox": "npm test -- --browsers Firefox",
+    "test:chrome": "npm test -- --browsers Chrome",
+    "test:nobrowser": "NO_BROWSER=true npm test",
+    "test:node": "mocha --ui tdd tests/node"
   },
-  "repository": "thomasmeta13/ui",
+  "repository": "aframevr/aframe",
   "license": "MIT",
   "files": [
     "dist/*",
